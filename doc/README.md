@@ -64,7 +64,7 @@ systemctl status apache2
 
 ```
 
-## Configuracion del virtualhost de atenea y apolo
+## 5.Configuracion del virtualhost de atenea y apolo
 Aqui configuraremos un VirtualHost para atenea.olimpo.test en el puerto 80 y para apolo.olimpo.test, estableciendo sus directorios raíz . También se personalizaremos las páginas de error 403 y 404,habilitamos los registros de acceso y errores y  configuramos los permisos del directorio, desactivando la exploración de directorios .
 
 Para atenea:
@@ -111,3 +111,49 @@ Para apolo:
 
 </VirtualHost>
 ```
+## 6. Creacion de messages 404
+Esto nos devolvera el mensaje de error 404 para nuestras webs.
+Creamos uno para apolo.olimpo.test y otro en atenea.olimpo.test, para ello creamos un html llamado 404 y dentro de este añadimos lo siguiente para cada uno de ellos.
+
+Para atenea:
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>Resource not found on atenea.olimpo.test</h1>
+</body>
+</html>
+```
+Para apolo:
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>Resource not found on apolo.olimpo.test</h1>
+</body>
+</html>
+```
+
+
+## 6.Comprobacion alis DNS
+Para realizar la comprobacion del alias ejecutamos:
+`vagrant ssh dns -c "dig @192.168.57.10 apolo.olimpo.test CNAME +short"`
+```
+PS C:\Users\User\Desktop\ASIRB2\sir\Web\Weblab-01-Virtual-websites> vagrant ssh dns -c "dig @192.168.57.10 apolo.olimpo.test CNAME +short"
+mercurio.olimpo.test.
+```
+Para la comprobacion de la direccion IP usamos:
+`vagrant ssh dns -c "dig @192.168.57.10 apolo.olimpo.test A +short"`
+```
+PS C:\Users\User\Desktop\ASIRB2\sir\Web\Weblab-01-Virtual-websites> vagrant ssh dns -c "dig @192.168.57.10 apolo.olimpo.test A +short"
+mercurio.olimpo.test.
+192.168.57.11
+
+```
+
