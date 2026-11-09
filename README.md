@@ -1,6 +1,6 @@
-**# Web Lab 1: Virtual Hosts**
+# Web Lab 1: Virtual Hosts
 
-**## Usage**
+## Usage
 
 Run:
 
@@ -12,7 +12,7 @@ There will be two virtual machines:
 
 - `web`
 
-**## Contents**
+## Contents
 
 Contains the following files:
 
