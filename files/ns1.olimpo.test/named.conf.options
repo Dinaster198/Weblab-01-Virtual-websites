@@ -1,6 +1,5 @@
 # named.conf.options
 #
-# Fernando Raya <fraya@ieszaidinvergeles.org>
 
 acl trusted {
     127.0.0.0/8;
@@ -10,8 +9,16 @@ acl trusted {
 options {
         directory "/var/cache/bind";
 
+	allow-query {
+	
+	trusted;	
+
+	}
+
+
 	allow-recursion {
 	  trusted;
+	  
 	};
 
         forwarders {
@@ -20,5 +27,5 @@ options {
 
         dnssec-validation yes;
 
-        listen-on-v6 { any; };
+        listen-on-v6 { none; };
 };
