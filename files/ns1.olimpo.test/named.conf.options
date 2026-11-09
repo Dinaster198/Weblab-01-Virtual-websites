@@ -9,12 +9,6 @@ acl trusted {
 options {
         directory "/var/cache/bind";
 
-	allow-query {
-	
-	trusted;	
-
-	}
-
 
 	allow-recursion {
 	  trusted;

@@ -4,5 +4,6 @@ cp -v /vagrant/files/ns1.olimpo.test/named.conf.local /etc/bind
 cp -v /vagrant/files/ns1.olimpo.test/olimpo.test.dns /var/lib/bind
 cp -v /vagrant/files/ns1.olimpo.test/192.168.57.dns /var/lib/bind
 
+named-checkconf -z
 systemctl restart named
 systemctl status named
