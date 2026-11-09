@@ -233,7 +233,7 @@ Aqui aparece mensaje personalizado 403:
 `http://atenea.olimpo.test/messages`
 ![alt text](img/img8.png)
 
-### Comprobacion de logs apolo
+### Comprobacion de logs atenea
 Para comprobar los logs entramos a la maquina de web y usamos el comando `sudo tail -n 20 /var/log/apache2/atenea.olimpo.test.access.log`.
 
 ```
