@@ -7,9 +7,8 @@
 #
 
 # tu código aquí
-cp -v /vagrant/flies/mercurio.olimpo.test/apolo.olimpo.test.conf /etc/apache2/sites-available/
-cp -v /vagrant/flies/mercurio.olimpo.test/atenea.olimpo.test.conf /etc/apache2/sites-available/
-
+cp -v /vagrant/files/mercurio.olimpo.test/apolo.olimpo.test.conf /etc/apache2/sites-available/
+cp -v /vagrant/files/mercurio.olimpo.test/atenea.olimpo.test.conf /etc/apache2/sites-available/
 
 # Habilitar los servidores virtuales
 #
