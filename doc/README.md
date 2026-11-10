@@ -188,8 +188,9 @@ Now we will perform the tests in our browser. To do this, we must modify our com
 ### For apolo
 
 The file listing is displayed here:
-`http://apolo.olimpo.test`
-![alt text](img/img1.png)
+
+
+![http://apolo.olimpo.test](img/img1.png)
 
 The Apolo website is displayed here:
 `http://apolo.olimpo.test/apolo.html`
