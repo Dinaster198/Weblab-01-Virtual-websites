@@ -188,20 +188,21 @@ Now we will perform the tests in our browser. To do this, we must modify our com
 ### For apolo
 
 The file listing is displayed here:
-`http://apolo.olimpo.test`
-![alt text](img/img1.png)
+
+
+![http://apolo.olimpo.test](img/img1.png)
 
 The Apolo website is displayed here:
-`http://apolo.olimpo.test/apolo.html`
-![alt text](img/img2.png)
+
+![http://apolo.olimpo.test/apolo.html](img/img2.png)
 
 The 404 error is displayed here:
-`http://apolo.olimpo.test`
-![alt text](img/img3.png)
+
+![http://apolo.olimpo.test](img/img3.png)
 
 The 404 error is displayed here:
-`http://apolo.olimpo.test`
-![alt text](img/img4.png)
+
+![http://apolo.olimpo.test](img/img4.png)
 
 ### Checking Apolo logs
 
@@ -221,24 +222,20 @@ vagrant@mercurio:~$ sudo tail -n 20 /var/log/apache2/apolo.olimpo.test.access.lo
 ### For Atenea
 
 The Atenea website is displayed here:
-`http://atenea.olimpo.test/atenea.html`
-![alt text](img/img5.png)
+
+![http://atenea.olimpo.test/atenea.html](img/img5.png)
 
 The custom 403 error is displayed here:
-`http://atenea.olimpo.test`
-![alt text](img/img6.png)
+
+![http://atenea.olimpo.test](img/img6.png)
 
 The custom 404 error is displayed here:
-`http://atenea.olimpo.test/index.html`
-![alt text](img/img7.png)
+
+![http://atenea.olimpo.test/index.html](img/img7.png)
 
 The custom 403 message is displayed here:
-`http://atenea.olimpo.test/messages`
-![alt text](img/img8.png)
 
-
-
-[http://atenea.olimpo.test/messages](http://atenea.olimpo.test/messages)
+![http://atenea.olimpo.test/messages](img/img8.png)
 
 
 
