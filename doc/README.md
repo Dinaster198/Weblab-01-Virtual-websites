@@ -254,3 +254,79 @@ vagrant@mercurio:~$ sudo tail -n 20 /var/log/apache2/atenea.olimpo.test.access.l
 192.168.57.1 - - [09/Nov/2026:19:02:12 +0000] "GET /messages HTTP/1.1" 301 639 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36"
 192.168.57.1 - - [09/Nov/2026:19:02:12 +0000] "GET /messages/ HTTP/1.1" 403 270 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157
 ```
+
+## 9. Test curl
+
+Here we gona test the web pages whit the command `curl`.
+
+Here we check that we can reach the page.
+`curl -i http://apolo.olimpo.test`
+```
+vagrant@mercurio:~$ curl -i http://apolo.olimpo.test
+HTTP/1.1 200 OK
+Date: Thu, 12 Nov 2026 16:00:59 GMT
+Server: Apache/2.4.71 (Debian)
+Vary: Accept-Encoding
+Content-Length: 1386
+Content-Type: text/html;charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <title>Index of /</title>
+ </head>
+ <body>
+<h1>Index of /</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="apolo.html">apolo.html</a></td><td align="right">2026-11-09 16:55  </td><td align="right"> 21 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="apolo1.txt">apolo1.txt</a></td><td align="right">2026-11-09 16:55  </td><td align="right"> 20 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="apolo2.txt">apolo2.txt</a></td><td align="right">2026-11-09 16:55  </td><td align="right"> 20 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/folder.gif" alt="[DIR]"></td><td><a href="messages/">messages/</a></td><td align="right">2026-11-09 18:19  </td><td align="right">  - </td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.4.71 (Debian) Server at apolo.olimpo.test Port 80</address>
+</body></html>
+```
+
+Here on atenea we can see that we dont have permission
+` curl -i http://atenea.olimpo.test/messages/`
+
+```
+vagrant@mercurio:~$ curl -i http://atenea.olimpo.test/messages/
+HTTP/1.1 403 Forbidden
+Date: Thu, 12 Nov 2026 16:02:01 GMT
+Server: Apache/2.4.71 (Debian)
+Content-Length: 55
+Content-Type: text/html; charset=iso-8859-1
+
+You do not have permission to access atenea.olimpo.testvagrant@mercurio:~$
+
+```
+
+Here we can see the message erro 404.
+
+`curl -i http://atenea.olimpo.test/index.html`
+```
+vagrant@mercurio:~$ curl -i http://atenea.olimpo.test/index.html
+HTTP/1.1 404 Not Found
+Date: Thu, 12 Nov 2026 16:03:42 GMT
+Server: Apache/2.4.71 (Debian)
+Last-Modified: Mon, 09 Nov 2026 18:54:01 GMT
+ETag: "9b-65fdc7c3aaf07"
+Accept-Ranges: bytes
+Content-Length: 155
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>Resource not found on atenea.olimpo.test</h1>
+</body>
+</html>vagrant@mercurio:~$
+
+```
