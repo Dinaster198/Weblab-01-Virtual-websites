@@ -33,13 +33,13 @@ nameserver 192.168.57.10
 
 In the Apache provisioning script, we add the following commands.
 
-#
-# Copy Apache2 configuration files, including:
-#
-# - apache2.conf,
-# - apolo.olimpo.test.conf
-# - atenea.olimpo.test.conf
-#
+
+## Copy Apache2 configuration files, including:
+
+ - apache2.conf,
+ - apolo.olimpo.test.conf
+ - atenea.olimpo.test.conf
+
 
 # Your code here
 cp -v /vagrant/files/mercurio.olimpo.test/apolo.olimpo.test.conf /etc/apache2/sites-available/
