@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
     vb.linked_clone = true
-    vb.memory = "256"
+    vb.memory = "1024"
   end
 
   # Común a todas las máquinas

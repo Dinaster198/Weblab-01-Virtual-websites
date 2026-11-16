@@ -1,0 +1,24 @@
+---
+- name: Provisionar dns
+  hosts: dns
+  become: true
+
+  tasks:
+    - name: Instalar Bind
+      apt:
+        name: bind9
+        state: present
+        update_cache: true
+
+    - name: Copiar opciones de Bind
+      copy:
+        src: files/ns1.olimpo.test/name.conf.options
+        dest: etc/bind/named.conf.options
+        owner: root
+        group: biind
+        mode: "0644"
+    
+    - name: Reiniciar Bind
+      service:
+        name: bind9
+        state: restarted 

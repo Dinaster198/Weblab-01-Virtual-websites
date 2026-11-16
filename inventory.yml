@@ -1,0 +1,9 @@
+---
+all:
+  hosts:
+    dns:
+      ansible_host: 192.168.57.10
+      ansible_ssh_private_key_file: /home/alumnom/.vagrant.d/insecure_private_keys/vagrant.key.ed25519
+    web:
+      ansible_host: 192.168.57.11
+      ansible_ssh_private_key_file: /home/alumnom/.vagrant.d/insecure_private_keys/vagrant.key.ed25519
