@@ -16,10 +16,10 @@ options {
 	};
 
         forwarders {
-              1.1.1.1;
+              10.0.2.2;
         };
 
-        dnssec-validation yes;
+        dnssec-validation no;
 
         listen-on-v6 { none; };
 };

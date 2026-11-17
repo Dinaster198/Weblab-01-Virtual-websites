@@ -1,24 +1,68 @@
 ---
-- name: Provisionar dns
+- name: Provisionar DNS
   hosts: dns
   become: true
-
   tasks:
     - name: Instalar Bind
-      apt:
+      ansible.builtin.apt:
         name: bind9
         state: present
-        update_cache: true
+        update_cache: true   
 
-    - name: Copiar opciones de Bind
-      copy:
-        src: files/ns1.olimpo.test/name.conf.options
-        dest: etc/bind/named.conf.options
+    - name: Copiar Opciones de Bind
+      ansible.builtin.copy:
+        src: files/ns1.olimpo.test/named.conf.options
+        dest: /etc/bind/named.conf
         owner: root
-        group: biind
+        group: bind
         mode: "0644"
-    
+
+    - name: Copiar ns1.olimpo.test/named
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/named
+        dest: /etc/default/
+        owner: root
+        group: bind
+        mode: "0644"
+
+    - name: Copiar ns1.olimpo.test/conf.options
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/named.conf.options
+        dest: /etc/default/
+        owner: root
+        group: bind
+        mode: "0644"
+
+    - name: Copiar ns1.olimpo.test/conf.options
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/named.conf.options
+        dest: /etc/bind
+        owner: root
+        group: bind
+        mode: "0644"
+
+    - name: Copiar ns1.olimpo.test/conf.local
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/named.conf.local
+        dest: /etc/bind
+        owner: root
+        group: bind
+        mode: "0644"
+
+    - name: Copiar ns1.olimpo.test/test.dns
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/olimpo.test.dns
+        dest: /var/lib/bind
+        group: bind
+        mode: "0644"
+
+    - name: Copiar ns1.olimpo.test/ip.dns
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/192.168.57.dns 
+        dest: /var/lib/bind
+        group: bind
+        mode: "0644"
     - name: Reiniciar Bind
-      service:
+      ansible.builtin.service:
         name: bind9
-        state: restarted 
+        state: restarted
